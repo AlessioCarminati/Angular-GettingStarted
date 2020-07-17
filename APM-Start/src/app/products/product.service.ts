@@ -13,7 +13,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<IProduct[]> {
+  getProducts(): Observable<IProduct[]> { 
 
     return this.http.get<IProduct[]>(this.productUrl).pipe(
       tap(data => console.log(JSON.stringify(data))), catchError(this.handleError)
